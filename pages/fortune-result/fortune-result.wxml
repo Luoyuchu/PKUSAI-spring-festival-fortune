@@ -1,0 +1,21 @@
+<!--pages/fortune-result.wxml-->
+<view class="result-page">
+
+  <!-- <view class="sub-background-container">
+    <image class="sub-background-img" src='../../images/3x/sub-background@3x.png' mode='widthFix'></image>
+  </view> -->
+
+    <view class="main" style="padding: 0; margin: 0">
+      <!--margin: 0;padding: 0;解决某些机型有边距出现的问题-->
+      <canvas canvas-id='myCanvas' style='width:750rpx; height:1250rpx;margin: 0;padding: 0;display: block;'></canvas>
+    </view>
+
+  <view class='footer'>
+    <view class='btn-layout'>
+      <button class='btn-pierced btn-width' bindtap="returnIndex">换个名字测</button>
+    </view>
+    <view class='btn-layout'>
+      <button class='btn btn-layout btn-width' bindtap="saveImage">保存图片</button>
+    </view>
+  </view>
+</view>
