@@ -3,3 +3,7 @@
 源码参考：https://github.com/panyefan/wxfortune
 
 背景图片比例：390：650
+
+![1](./screenshot/1.png)
+
+![1](./screenshot/2.png)
