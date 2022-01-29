@@ -4,7 +4,26 @@ Page({
   /**
    * 页面的初始数据
    */
- 
+  all_text : ['稳定不稳定，反正都逃不过置身湍流中的事实，只是一些琐碎的细节而已，最后的方向基本上不会有什么改变，所以只要随意就好',
+              'It is our choices that show what we truly are, far more than our abilities',
+              'You have to live spherically - in many directions. Never lose your childish enthusiasm and things will come your way',
+              '为了自己想过的生活，勇于放弃一些东西。若要前行，就得离开你现在停留的地方',
+              '不必太纠结于当下，也不必太忧虑未来，当你经历过一些事情的时候，眼前的风景已经和从前不一样了',
+              '活着就意味必须要做点什么，请好好努力',
+              '千万别因为懦弱和无聊的自尊失去心爱的人',
+              '缺乏想象力的狭隘、苛刻、自以为是的命题、空洞的术语、被篡夺的理想、僵化的思想体系——对我来说，真正可怕的是这些东西',
+              '有些人不属于自己，但是遇见了也弥足珍贵',
+              '决定人生的那一瞬间，绝对不能够欺骗自己',
+              '当你相信你做的是对的时，你就不愿意浪费一分一秒',
+              '一个好棋手得想好了再走棋，至少要先想好三步',
+              '凭信念做事，而且不遗余力',
+              '眼里所无法看见的花朵，更无心中所不愿思慕的明月',
+              '必须努力寻找自己的声音，因为越迟开始寻找，找到的可能性就越小',
+              '放心吧，你一定可以做得到的',
+              '燃烧比褪色好',
+              '自学者和学生的区别，不在于知识的广度，而在于生命力和自信心的差异',
+              '如果爱，请深爱，爱到不能再爱的那一天','在隆冬，我终于知道，我身上有一个不可战胜的夏天','只要能拥抱世界，那拥抱得笨拙又有什么关系','与其不透彻地理解许多事，不如理解的事不多，但都能彻底'],
+  all_title : ['上上签','上签','上上上签'],
   data: {
     pixelRatio: 0,
     windowWidth: 0,
@@ -22,6 +41,7 @@ Page({
     title: '',
     desc: '',
     
+    
   },
 
   returnIndex: () => {
@@ -37,10 +57,16 @@ Page({
   onLoad: function (options) {
     let that = this;
     let arr = wx.getStorageSync('currentFortuneData') || {};
+    var title_idx = Math.floor(Math.random()*3)
+    var text_idx = Math.floor(Math.random()*22)
+    
+    
     this.setData({
       name: arr.name +' 的虎年新年签',
-      title: "上上签",
-      desc: "论文发不停！"
+      // title: "上上签",
+      title: this.all_title[title_idx],
+      // desc: "论文发不停！",
+      desc:this.all_text[text_idx],
     })
 
     wx: wx.getSystemInfo({
