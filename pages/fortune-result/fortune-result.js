@@ -4,20 +4,24 @@ Page({
   /**
    * 页面的初始数据
    */
+ 
   data: {
     pixelRatio: 0,
     windowWidth: 0,
     windowHeight: 0,
     showBgImagePath:'',
-    showBgImagePath2: '../../images/3x/b1@3x.png',
-    showBgImagePath3: '../../images/3x/b1@3x.png',
+    // showBgImagePath2: '../../images/3x/b1@3x.png',
+    // showBgImagePath3: '../../images/3x/b1@3x.png',
+    showBgImagePath2: '../../images/backgrounds/3.png',
+    showBgImagePath3: '../../images/backgrounds/3.png',
     dogBgImagePath:'',
     dogBgImagePath2: '../../images/3x/fortune-frame@3x.png',
     dogBgImagePath3: '../../images/3x/fortune-frame@3x.png',
     qrBgImagePath: '../../images/qr@2x.jpg',
     name: '',
     title: '',
-    desc: ''
+    desc: '',
+    
   },
 
   returnIndex: () => {
@@ -59,14 +63,19 @@ Page({
 
   drawCanvas: function () {
     // 根据像素比绘画不同的图片
+    var idx = Math.floor(Math.random()*23)
+    // var idx = 3
+    var img_path = '../../images/backgrounds/' + (idx+1).toString()+'.png';
     if (this.data.pixelRatio == 2) {
       this.setData({
-        showBgImagePath: this.data.showBgImagePath2,
+        // showBgImagePath: this.data.showBgImagePath2,
+        showBgImagePath : img_path,
         dogBgImagePath: this.data.dogBgImagePath2
       });
     } else {
       this.setData({
-        showBgImagePath: this.data.showBgImagePath3,
+        // showBgImagePath: this.data.showBgImagePath3,
+        showBgImagePath : img_path,
         dogBgImagePath: this.data.dogBgImagePath3
       });
     }
